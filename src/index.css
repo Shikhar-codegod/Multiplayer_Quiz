@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  /* Global defaults */
+  --font-primary: 'Outfit', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 12px;
+  --transition-speed: 0.5s;
+  
+  /* Shared Base */
+  --card-radius: 20px;
+  --button-radius: 12px;
+
+  /* Default fallback theme (Akash/Space) */
+  --primary-color: #6366f1;
+  --secondary-color: #818cf8;
+  --accent-color: #4f46e5;
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  --glow-color: rgba(99, 102, 241, 0.4);
+  --cursor-trail: #c7d2fe;
+}
+
+/* =========================================
+   PANCHATATVA THEMES 
+========================================= */
+
+/* 1. Jal (Water) */
+[data-theme="jal"] {
+  --primary-color: #0ea5e9;
+  --secondary-color: #38bdf8;
+  --accent-color: #0284c7;
+  --bg-gradient: linear-gradient(135deg, #082f49 0%, #0c4a6e 100%);
+  --glow-color: rgba(14, 165, 233, 0.5);
+  --cursor-trail: #bae6fd;
+}
+
+/* 2. Agni (Fire) */
+[data-theme="agni"] {
+  --primary-color: #ef4444;
+  --secondary-color: #f97316;
+  --accent-color: #dc2626;
+  --bg-gradient: linear-gradient(135deg, #450a0a 0%, #7f1d1d 100%);
+  --glow-color: rgba(239, 68, 68, 0.5);
+  --cursor-trail: #fca5a5;
+}
+
+/* 3. Vaayu (Air) */
+[data-theme="vaayu"] {
+  --primary-color: #10b981; /* Shifted to breeze-like green/teal instead of purple for distinction */
+  --secondary-color: #34d399;
+  --accent-color: #059669;
+  --bg-gradient: linear-gradient(135deg, #064e3b 0%, #022c22 100%);
+  --glow-color: rgba(16, 185, 129, 0.5);
+  --cursor-trail: #a7f3d0;
+}
+
+/* 4. Prithvi (Earth) */
+[data-theme="prithvi"] {
+  --primary-color: #d97706;
+  --secondary-color: #fbbf24;
+  --accent-color: #b45309;
+  --bg-gradient: linear-gradient(135deg, #451a03 0%, #78350f 100%);
+  --glow-color: rgba(217, 119, 6, 0.5);
+  --cursor-trail: #fde68a;
+}
+
+/* 5. Akash (Space) */
+[data-theme="akash"] {
+  --primary-color: #8b5cf6;
+  --secondary-color: #a78bfa;
+  --accent-color: #6d28d9;
+  --bg-gradient: linear-gradient(135deg, #2e1065 0%, #4c1d95 100%);
+  --glow-color: rgba(139, 92, 246, 0.5);
+  --cursor-trail: #ddd6fe;
+}
+
+
+/* =========================================
+   GLOBAL RESET & BASE
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: transparent;
+  color: var(--text-color);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   UTILITIES & DESIGN SYSTEM
+========================================= */
+
+/* Glassmorphism Panels */
+.glass-panel {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--card-radius);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5em;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+p, span, div, a {
+  font-family: var(--font-secondary);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--button-radius);
+  font-weight: 700;
+  font-family: var(--font-secondary);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px var(--glow-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px var(--glow-color);
+  background: var(--secondary-color);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* Custom Scrollbar for the theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
